@@ -8,15 +8,31 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var vm: ToDoListGameViewModel
     var body: some View {
         VStack {
-            Text("To Do List....")
-            Spacer()
+            Text("\(vm.taskList)")
+         //   Spacer()
+            ForEach(vm.taskList) {
+                element in
+                HStack {
+                    Text(element.taskName)
+                    Button("Complete Task, \(element.id)") {
+                        vm.completeTask(id: element.id)
+                     }
+                }
+            }
+           // Text("\(vm.taskList)")
+            Button("Create New Task") {
+                vm.createNewTask(name: "Bobby", description: "Testing New Task", isImportant: false)
+            }
+           
+
         }
         .padding()
     }
 }
 
 #Preview {
-    ContentView()
+    ContentView(vm: ToDoListGameViewModel())
 }
