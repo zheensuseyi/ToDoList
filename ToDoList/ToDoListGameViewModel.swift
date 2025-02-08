@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+// FIXME: figure out why taskList isnt updating 
 class ToDoListGameViewModel: ObservableObject{
     @Published var game: ToDoListGame = ToDoListGame()
     var points: Int {
@@ -15,24 +15,28 @@ class ToDoListGameViewModel: ObservableObject{
     var title: String {
         return game.title
     }
-    var taskList: [ToDoListGame.Task] {
-        return game.taskList
+    @Published var taskList: [ToDoListGame.Task]
+    init(game: ToDoListGame) {
+        taskList = []
+        self.game = game
+        self.taskList = game.taskList
     }
-    
+    var alert: Alert {
+        Alert(title: Text("You just completed your task!"), message: Text("Your score is now \(points)"), dismissButton: .default(Text("Dismiss")))
+    }
+
     func createNewTask(name: String, description: String, isImportant: Bool) {
         game.createNewTask(taskName: name, taskDescription: description, isImportant: isImportant)
-        syncWithGame()
+        taskList = game.taskList
     }
 
     func completeTask(id: Int) {
         game.completeTask(id: id)
-        syncWithGame()
+        taskList = game.taskList
     }
     
     func syncWithGame() {
-        _ = game.taskList
-        _ = game.title
-        _ = game.points
+        taskList = game.taskList
     }
     
 }

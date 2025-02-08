@@ -21,11 +21,12 @@ struct ToDoListGame {
         idCounter += 1
         let newTask = Task(id: idCounter, taskName: taskName, taskDescription: taskDescription, isImportant: isImportant)
         taskList.append(newTask)
-        print(newTask.id)
+        print(newTask)
     }
     
     mutating func completeTask(id: Int) {
         taskList.removeAll { $0.id == id }
+        points += 1
     }
     
     struct Task: Identifiable, Equatable {
