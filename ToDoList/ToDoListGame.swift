@@ -12,6 +12,7 @@ struct ToDoListGame {
     private(set) var title: String = "To Do List For Today..."
     var taskList: [Task]
     private(set) var idCounter = 0
+    
     init() {
         taskList = []
         taskList.append(Task(id: idCounter, taskName: "Wake UP", taskDescription: "Get out of bed.", isImportant: true))
@@ -21,10 +22,11 @@ struct ToDoListGame {
         idCounter += 1
         let newTask = Task(id: idCounter, taskName: taskName, taskDescription: taskDescription, isImportant: isImportant)
         taskList.append(newTask)
-        print(newTask)
+        print("Task Created: \(newTask)")
     }
     
     mutating func completeTask(id: Int) {
+        print("Task Removed")
         taskList.removeAll { $0.id == id }
         points += 1
     }

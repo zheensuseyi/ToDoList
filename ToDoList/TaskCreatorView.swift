@@ -59,5 +59,5 @@ struct TaskCreatorView: View {
 }
 
 #Preview {
-    TaskCreatorView(vm: ToDoListGameViewModel(game: ToDoListGame()))
+    TaskCreatorView(vm: ToDoListGameViewModel())
 }
