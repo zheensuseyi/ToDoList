@@ -14,6 +14,7 @@
 		AD9024112D559DA90026AB2D /* ToDoListGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9024102D559DA90026AB2D /* ToDoListGame.swift */; };
 		AD9024132D559E090026AB2D /* ToDoListGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9024122D559E090026AB2D /* ToDoListGameViewModel.swift */; };
 		AD9024152D56E7640026AB2D /* TaskCreatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9024142D56E7640026AB2D /* TaskCreatorView.swift */; };
+		ADD5B4A92D5ADF50000587E3 /* TaskDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD5B4A82D5ADF50000587E3 /* TaskDescriptionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		AD9024102D559DA90026AB2D /* ToDoListGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListGame.swift; sourceTree = "<group>"; };
 		AD9024122D559E090026AB2D /* ToDoListGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListGameViewModel.swift; sourceTree = "<group>"; };
 		AD9024142D56E7640026AB2D /* TaskCreatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCreatorView.swift; sourceTree = "<group>"; };
+		ADD5B4A82D5ADF50000587E3 /* TaskDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDescriptionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				AD9024102D559DA90026AB2D /* ToDoListGame.swift */,
 				AD9024022D559D590026AB2D /* ToDoListApp.swift */,
 				AD9024042D559D590026AB2D /* ContentView.swift */,
+				ADD5B4A82D5ADF50000587E3 /* TaskDescriptionView.swift */,
 				AD9024142D56E7640026AB2D /* TaskCreatorView.swift */,
 				AD9024062D559D5C0026AB2D /* Assets.xcassets */,
 				AD9024082D559D5C0026AB2D /* Preview Content */,
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADD5B4A92D5ADF50000587E3 /* TaskDescriptionView.swift in Sources */,
 				AD9024052D559D590026AB2D /* ContentView.swift in Sources */,
 				AD9024032D559D590026AB2D /* ToDoListApp.swift in Sources */,
 				AD9024132D559E090026AB2D /* ToDoListGameViewModel.swift in Sources */,

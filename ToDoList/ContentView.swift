@@ -29,8 +29,16 @@ struct ContentView: View {
                         LazyVGrid(columns: columns) {
                             ForEach(vm.taskList) {
                                 item in
-                                Text("Task \(item.id + 1): \(item.taskName)")
+                                
+                               /* Text("Task \(item.id + 1): \(item.taskName)")
+                                    .font(.title)
                                     .foregroundColor(vm.colorConversion(item.color))
+                            */
+                                NavigationLink(destination: TaskDescriptionView(description: item.taskDescription)){
+                                    Text("Task \(item.id + 1) : \(item.taskName)")
+                                }
+                                .foregroundColor(vm.colorConversion(item.color))
+                                .font(.title2)
                                 Button("✅") {
                                     vm.completeTask(id: item.id)
                                     completeTask.toggle()
@@ -40,7 +48,6 @@ struct ContentView: View {
                         }
                     }
                     .padding()
-                    .font(.title2)
                     Spacer()
                     NavigationLink(destination: TaskCreatorView(vm: vm)){
                         Label("Create New Task", systemImage: "app.badge")
