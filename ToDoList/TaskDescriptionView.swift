@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+// FIXME: Maybe make this screen a little prettier 
+// this view basically just shows the task description of the specific task tapped
 struct TaskDescriptionView: View {
     var description: String = "Task Description"
     var body: some View {
