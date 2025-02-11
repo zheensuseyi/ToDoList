@@ -37,11 +37,17 @@ struct ToDoListGame {
         var taskDescription: String
         var isImportant: Bool
         var isSelected: Bool = false
+        var color: String = "black"
+        
         init(id: Int, taskName: String, taskDescription: String, isImportant: Bool) {
             self.id = id
             self.taskName = taskName
             self.taskDescription = taskDescription
             self.isImportant = isImportant
+            if isImportant {
+                color = "red"
+            }
         }
     }
 }
+
