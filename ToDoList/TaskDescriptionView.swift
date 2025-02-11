@@ -12,21 +12,20 @@ import SwiftUI
 struct TaskDescriptionView: View {
     var description: String = "Task Description"
     var body: some View {
-        ZStack {
-            Color(.gray)
-                .ignoresSafeArea()
             VStack {
                 Text("Task Description")
                     .font(.largeTitle)
                     .fontWeight(.bold)
+                Spacer()
                 ScrollView {
                     Text("\(description)")
+                        .font(.headline)
                 }
-                Spacer()
+                .padding()
             }
         }
     }
-}
+
 
 #Preview {
     TaskDescriptionView()

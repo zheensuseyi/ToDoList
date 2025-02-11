@@ -28,6 +28,9 @@ class ToDoListGameViewModel: ObservableObject{
     var alert: Alert {
         Alert(title: Text("You just completed your task!"), message: Text("Your score is now \(points)"), dismissButton: .default(Text("Dismiss")))
     }
+    var taskCreated: Alert {
+        Alert(title: Text("New Task Created!"), message: Text("Check it out in the home screen"), dismissButton: .default(Text("Dismiss")))
+    }
     
     // function to create new task, calls upon a function in the model
     func createNewTask(name: String, description: String, isImportant: Bool) {
@@ -44,10 +47,10 @@ class ToDoListGameViewModel: ObservableObject{
         switch taskColor {
         case "red":
             return Color.red
-        case "black":
-            return Color.black
+        case "blue":
+            return Color.blue
         default:
-            return Color.black
+            return Color.blue
         }
     }
     
