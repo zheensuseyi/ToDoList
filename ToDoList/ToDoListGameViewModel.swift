@@ -24,10 +24,12 @@ class ToDoListGameViewModel: ObservableObject{
         return game.title
     }
     
-    // alert for the view
-    var alert: Alert {
+    // alert for completing a task for the view
+    var completeTask: Alert {
         Alert(title: Text("You just completed your task!"), message: Text("Your score is now \(points)"), dismissButton: .default(Text("Dismiss")))
     }
+    
+    // alert for creating a task for the view
     var taskCreated: Alert {
         Alert(title: Text("New Task Created!"), message: Text("Check it out in the home screen"), dismissButton: .default(Text("Dismiss")))
     }
@@ -42,7 +44,7 @@ class ToDoListGameViewModel: ObservableObject{
         game.completeTask(id: id)
     }
     
-    // function for color conversion, used in the view
+    // function for color conversion, used in the view, since color cant be initalized in our ToDoListGame file
     func colorConversion(_ taskColor: String) -> Color {
         switch taskColor {
         case "red":

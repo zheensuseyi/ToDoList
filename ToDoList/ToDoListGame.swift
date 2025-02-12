@@ -9,11 +9,13 @@ import Foundation
 
 // FIXME: clean up code, set variables to private 
 struct ToDoListGame {
-    // initalzing our variables
+    // initalzing our private variables that are read only
     private(set) var points: Int = 0
     private(set) var title: String = "To Do List For Today..."
-    var taskList: [Task]
     private(set) var idCounter = 0
+    
+    // taskList array which is used throughout the app
+    var taskList: [Task]
     
     // using this init to initalize taskList with a default task
     init() {

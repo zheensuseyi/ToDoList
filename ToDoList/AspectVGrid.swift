@@ -7,11 +7,14 @@
 
 import SwiftUI
 
+// this is a helper file to display the tasks in the view
 struct AspectVGrid: View {
+    // default columns for lazyvgrid
     let columns = [GridItem(.flexible()), GridItem(.flexible())]
+    // getting viewmodel again
     @ObservedObject var vm: ToDoListGameViewModel
+    // alert variable that shows when a task is completed
     @State private var completeTask: Bool = false
-
     var body: some View {
         // aligning everything in a lazyvgrid
         LazyVGrid(columns: columns) {
@@ -33,10 +36,13 @@ struct AspectVGrid: View {
                     // toggling the alert
                     completeTask.toggle()
                 }
+                // making the button a little bigger
                 .font(.largeTitle)
             }
         }
-        .alert(isPresented: $completeTask, content: { vm.alert })
+        // alert for when a task is completed
+        .alert(isPresented: $completeTask, content: { vm.completeTask })
+        // nice and smooth animation when task is completed 
         .animation(.easeInOut, value: completeTask)
     }
 }

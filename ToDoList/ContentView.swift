@@ -7,14 +7,10 @@
 
 import SwiftUI
 
-// FIXME: clean up code by adding extensions 
+// Home Screen
 struct ContentView: View {
     // getting viewmodel which was initalized in viewmodel already
     @ObservedObject var vm: ToDoListGameViewModel
-    // variable for activating alert
-    @State private var completeTask: Bool = false
-    // default columns given by apple
-    let columns = [GridItem(.flexible()), GridItem(.flexible())]
     var body: some View {
         // wrapping everything in a navigationstack to enable going to different screens
         NavigationStack {
@@ -29,19 +25,21 @@ struct ContentView: View {
                 Spacer()
                 // scrollview for tasks, can add as many tasks as you want
                 ScrollView {
+                    // calling a seperate file here which handles the display of tasks
                     AspectVGrid(vm: vm)
                 }
                 // New task creation button, which will take you to the task creation screen
                 NavigationLink(destination: TaskCreatorView(vm: vm)){
                     Label("Create New Task", systemImage: "app.badge")
                 }
+                // some padding on the button so its not at the very bottom
                 .padding()
             }
+            // applying this font to everything that doesn't have a specific font already
             .font(.title2)
         }
     }
 }
-
 
 #Preview {
     ContentView(vm: ToDoListGameViewModel())
